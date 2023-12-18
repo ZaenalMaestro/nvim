@@ -21,31 +21,6 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
     }
 
-    -- theme
-    -- use({
-    --     'projekt0n/github-nvim-theme', tag = 'v0.0.7',
-    --     -- or                            branch = '0.0.x'
-    --     config = function()
-    --         require('github-theme').setup({
-    --             theme_style = "dark_default",
-    --             function_style = "italic",
-    --             sidebars = {"qf", "vista_kind", "terminal", "packer"},
-    --
-    --             -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-    --             colors = {hint = "orange", error = "#ff0000"},
-    --
-    --             -- Overwrite the highlight groups
-    --             overrides = function(c)
-    --                 return {
-    --                     htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
-    --                     DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-    --                     -- this will remove the highlight groups
-    --                     TSField = {},
-    --                 }
-    --             end
-    --         })
-    --     end
-    -- })
     use { "catppuccin/nvim", as = "catppuccin" }
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use ('theprimeagen/harpoon')
@@ -95,6 +70,21 @@ return require('packer').startup(function(use)
     use {
         'prettier/vim-prettier',
         run = 'yarn install --frozen-lockfile --production',
-        ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'} 
+        ft = {'javascript', 'react', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'} 
+    }
+        
+    -- auto pairs
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
     }
 end)
+
+
+
+
+
+
+
+
+

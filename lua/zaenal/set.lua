@@ -1,8 +1,4 @@
 vim.opt.guicursor = ""
-vim.keymap.set("i", "jj", "<Esc>")
-vim.keymap.set("n", "<C-L>", ":bp<CR>")
-vim.keymap.set("n", "<C-l>", ":bn<CR>")
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.number = true

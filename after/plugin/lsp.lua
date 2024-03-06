@@ -19,3 +19,16 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    -- delay update diagnostics
+    update_in_insert = true,
+    virtual_text = true,
+  }
+)
+
+
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = false,
+})

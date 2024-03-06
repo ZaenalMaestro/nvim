@@ -19,6 +19,3 @@ lsp_zero.set_sign_icons({
   info = '»'
 })
 
-vim.diagnostic.config({ 
-    virtual_text = true 
-})

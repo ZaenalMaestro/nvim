@@ -5,7 +5,8 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'tribela/vim-transparent'
     use 'Pocco81/auto-save.nvim'
-
+    
+    -- lsp
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -22,6 +23,14 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
+
+    -- lsp line
+    use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+            require("lsp_lines").setup()
+        end,
+    })
     -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.5',
